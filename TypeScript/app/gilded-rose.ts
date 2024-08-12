@@ -42,10 +42,8 @@ export class GildedRose {
       }
       if (item.sellIn < 0) {
         if (item.name != ItemName.AgedBrie) {
-          if (item.name != ItemName.BackstagePasses) {
-            if (item.quality > 0 && item.name != ItemName.Sulfuras) {
+          if (![ItemName.BackstagePasses, ItemName.Sulfuras].includes(item.name) && item.quality > 0) {
               item.quality = item.quality - 1
-            }
           } else {
             item.quality = 0
           }
