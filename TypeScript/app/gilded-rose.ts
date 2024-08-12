@@ -28,7 +28,7 @@ export class GildedRose {
   updateQuality() {
     for (let i = 0; i < this.items.length; i++) {
       const item = this.items[i];
-      const isNotItemNamesAndPositiveQuality = !itemsNames.includes(item.name) && item.quality > 0;
+      const isNotItemNamesAndPositiveQuality = !itemsNames.includes(item.name as ItemName) && item.quality > 0;
       if (isNotItemNamesAndPositiveQuality) {
         item.quality = item.quality - 1
       } else if (item.quality < 50) {
@@ -42,7 +42,7 @@ export class GildedRose {
       }
       if (item.sellIn < 0) {
         if (item.name != ItemName.AgedBrie) {
-          if (![ItemName.BackstagePasses, ItemName.Sulfuras].includes(item.name) && item.quality > 0) {
+          if (![ItemName.BackstagePasses, ItemName.Sulfuras].includes(item.name as ItemName) && item.quality > 0) {
               item.quality = item.quality - 1
           } else {
             item.quality = 0
