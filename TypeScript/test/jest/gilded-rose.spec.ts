@@ -2,7 +2,7 @@ import { Item, GildedRose } from '@/gilded-rose';
 
 describe('Gilded Rose', () => {
   it('should foo', () => {
-    const gildedRose = new GildedRose([new Item('foo', 0, 0)]);
+    const gildedRose = new GildedRose(Array.from({ length: 10000 }, () => new Item('foo', 0, 0)));
     const execTimes: number[] = [];
     for (let i = 0; i < 100; i++) {
       const startTime = performance.now();
